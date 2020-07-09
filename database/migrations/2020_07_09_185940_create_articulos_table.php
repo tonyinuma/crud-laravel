@@ -15,6 +15,13 @@ class CreateArticulosTable extends Migration
     {
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('detalle');
+            $table->integer('cantidad');
+            $table->double('precio_maroyista', 15, 8);
+            $table->double('precio_minorista', 15, 8);
+            $table->boolean('stock_disponible');
+            $table->boolean('foto');
             $table->timestamps();
         });
     }
