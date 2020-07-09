@@ -15,6 +15,7 @@ class ArticulosController extends Controller
     public function index()
     {
         //
+        return view('articulos.index');
     }
 
     /**
@@ -25,6 +26,7 @@ class ArticulosController extends Controller
     public function create()
     {
         //
+        return view('articulos.create');
     }
 
     /**

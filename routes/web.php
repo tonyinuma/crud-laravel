@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Route::get('/articulos', 'ArticulosController@index');
+Route::get('/articulos/create', 'ArticulosController@create'); */
+
+Route::resource('articulos', 'ArticulosController');
