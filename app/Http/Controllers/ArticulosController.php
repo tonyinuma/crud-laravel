@@ -38,6 +38,9 @@ class ArticulosController extends Controller
     public function store(Request $request)
     {
         //
+        $article_data = request()->all();
+
+        return response()->json($article_data);
     }
 
     /**
