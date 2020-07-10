@@ -15,7 +15,8 @@ class ArticulosController extends Controller
     public function index()
     {
         //
-        return view('articulos.index');
+        $datos['articulos'] = Articulos::paginate(5);  
+        return view('articulos.index',$datos);
     }
 
     /**
