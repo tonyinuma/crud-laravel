@@ -111,7 +111,12 @@ class ArticulosController extends Controller
     public function destroy($id)
     {
         //
-        Articulos::destroy($id);
+        $articulo = Articulos::findOrFail($id);
+            
+        //Elimina foto anterior
+        if (Storage::delete('public/'.$articulo->foto)) {
+            Articulos::destroy($id);
+        }
 
         return redirect('articulos');
     }
