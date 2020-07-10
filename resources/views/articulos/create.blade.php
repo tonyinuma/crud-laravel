@@ -26,4 +26,6 @@ CREAR EMPLEADOS
 
     <input type="submit" value="Agregar">
     
+    <a href="{{ url('articulos') }}">Regresar</a>
+    
 </form>

@@ -28,5 +28,6 @@ EDITAR
     <br>
     <input type="file" name="foto" id="foto" value="">
 
-    <input type="submit" value="Editar">
+    <input type="submit" value="Modificar">
+    <a href="{{ url('articulos') }}">Regresar</a>
 </form>

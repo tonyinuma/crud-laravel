@@ -1,5 +1,7 @@
 INICIO
 
+<a href="{{ url('/articulos/create') }}">Agregar Artículo</a>
+
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
