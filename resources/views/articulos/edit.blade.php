@@ -23,10 +23,10 @@ EDITAR
     <input type="text" name="stock_disponible" id="stock_disponible"> -->
 
     <label for="foto">{{'foto'}}</label>
-    <input type="file" name="foto" id="foto">
     <br>
-    {{ $articulo->foto }}
+    <img src="{{ asset('storage').'/'.$articulo->foto }}" alt="Imagen articulo" width="200">
     <br>
+    <input type="file" name="foto" id="foto" value="">
 
     <input type="submit" value="Editar">
 </form>

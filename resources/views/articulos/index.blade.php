@@ -22,15 +22,14 @@ INICIO
             <td>{{ $articulo->cantidad }}</td>
             <td>{{ $articulo->precio_maroyista }}</td>
             <td>{{ $articulo->precio_minorista }}</td>
-            <td>{{ $articulo->foto }}</td>
+            <td>
+                <img src="{{ asset('storage').'/'.$articulo->foto }}" alt="Imagen articulo" width="200">
+            </td>
             <td> 
-
                 <a href="{{ url('/articulos/'.$articulo->id).'/edit' }}">
                     Editar
                 </a>
-
                 | 
-            
                 <form action="{{ url('/articulos/'.$articulo->id) }}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
@@ -38,7 +37,6 @@ INICIO
                         Eliminar
                     </button>
                 </form>
-            
             </td>
         </tr>
     @endforeach

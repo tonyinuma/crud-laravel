@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Articulos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticulosController extends Controller
 {
@@ -84,6 +85,17 @@ class ArticulosController extends Controller
     {
         //
         $article_data = request()->except(['_token','_method']);
+
+        if ($request->hasFile('foto')) {
+
+            $articulo = Articulos::findOrFail($id);
+            
+            //Elimina foto anterior
+            Storage::delete('public/'.$articulo->foto);
+
+            // Guarda foto nueva
+            $article_data['foto'] = $request->file('foto')->store('uploads','public');
+        }
         Articulos::where('id','=',$id)->update($article_data);
 
         $articulo = Articulos::findOrFail($id);
