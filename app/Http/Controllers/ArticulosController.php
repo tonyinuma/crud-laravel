@@ -47,7 +47,8 @@ class ArticulosController extends Controller
 
         Articulos::insert($article_data);
 
-        return response()->json($article_data);
+        /* return response()->json($article_data); */
+        return redirect('articulos');
     }
 
     /**
