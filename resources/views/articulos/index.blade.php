@@ -23,7 +23,13 @@ INICIO
             <td>{{ $articulo->precio_maroyista }}</td>
             <td>{{ $articulo->precio_minorista }}</td>
             <td>{{ $articulo->foto }}</td>
-            <td> Editar | 
+            <td> 
+
+                <a href="{{ url('/articulos/'.$articulo->id).'/edit' }}">
+                    Editar
+                </a>
+
+                | 
             
                 <form action="{{ url('/articulos/'.$articulo->id) }}" method="post">
                     {{ csrf_field() }}

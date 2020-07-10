@@ -66,9 +66,11 @@ class ArticulosController extends Controller
      * @param  \App\Articulos  $articulos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Articulos $articulos)
+    public function edit($id)
     {
         //
+        $articulo = Articulos::findOrFail($id);
+        return view('articulos.edit', compact('articulo'));
     }
 
     /**
@@ -78,9 +80,14 @@ class ArticulosController extends Controller
      * @param  \App\Articulos  $articulos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Articulos $articulos)
+    public function update(Request $request, $id)
     {
         //
+        $article_data = request()->except(['_token','_method']);
+        Articulos::where('id','=',$id)->update($article_data);
+
+        $articulo = Articulos::findOrFail($id);
+        return view('articulos.edit', compact('articulo'));
     }
 
     /**
