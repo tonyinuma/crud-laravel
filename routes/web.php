@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/articulos/create', 'ArticulosController@create'); */
 
 Route::resource('articulos', 'ArticulosController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
