@@ -39,6 +39,10 @@ class ArticulosController extends Controller
     {
         //$article_data = request()->all();
         $article_data = request()->except('_token');
+        if ($request->hasFile('foto')) {
+            $article_data['foto'] = $request->file('foto')->store('uploads','public');
+        }
+
         Articulos::insert($article_data);
 
         return response()->json($article_data);
