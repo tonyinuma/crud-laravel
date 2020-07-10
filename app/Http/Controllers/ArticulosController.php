@@ -48,7 +48,7 @@ class ArticulosController extends Controller
         Articulos::insert($article_data);
 
         /* return response()->json($article_data); */
-        return redirect('articulos');
+        return redirect('articulos')->with('msg','Articulo agregado');
     }
 
     /**
@@ -99,8 +99,9 @@ class ArticulosController extends Controller
         }
         Articulos::where('id','=',$id)->update($article_data);
 
-        $articulo = Articulos::findOrFail($id);
-        return view('articulos.edit', compact('articulo'));
+        /* $articulo = Articulos::findOrFail($id);
+        return view('articulos.edit', compact('articulo')); */
+        return redirect('articulos')->with('msg','Articulo Actualizado');
     }
 
     /**
@@ -119,6 +120,6 @@ class ArticulosController extends Controller
             Articulos::destroy($id);
         }
 
-        return redirect('articulos');
+        return redirect('articulos')->with('msg','Articulo Eliminado');
     }
 }

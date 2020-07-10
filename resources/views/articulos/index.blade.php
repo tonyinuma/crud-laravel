@@ -1,5 +1,11 @@
 INICIO
 
+@if(Session::has('msg')){{
+    Session::get('msg')
+}}
+@endif
+
+
 <a href="{{ url('/articulos/create') }}">Agregar Artículo</a>
 
 <table class="table table-light">
