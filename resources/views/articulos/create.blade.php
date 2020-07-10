@@ -18,8 +18,8 @@ CREAR EMPLEADOS
     <label for="precio_minorista">{{'precio_minorista'}}</label>
     <input type="text" name="precio_minorista" id="precio_minorista">
 
-    <label for="stock_disponible">{{'stock_disponible'}}</label>
-    <input type="text" name="stock_disponible" id="stock_disponible">
+    <!-- <label for="stock_disponible">{{'stock_disponible'}}</label>
+    <input type="text" name="stock_disponible" id="stock_disponible"> -->
 
     <label for="foto">{{'foto'}}</label>
     <input type="file" name="foto" id="foto">
