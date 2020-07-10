@@ -37,8 +37,9 @@ class ArticulosController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $article_data = request()->all();
+        //$article_data = request()->all();
+        $article_data = request()->except('_token');
+        Articulos::insert($article_data);
 
         return response()->json($article_data);
     }
