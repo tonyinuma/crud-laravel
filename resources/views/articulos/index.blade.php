@@ -23,7 +23,17 @@ INICIO
             <td>{{ $articulo->precio_maroyista }}</td>
             <td>{{ $articulo->precio_minorista }}</td>
             <td>{{ $articulo->foto }}</td>
-            <td> Editar | Eliminar </td>
+            <td> Editar | 
+            
+                <form action="{{ url('/articulos/'.$articulo->id) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" onclick="return confirm('¿Eliminar Artículo?')">
+                        Eliminar
+                    </button>
+                </form>
+            
+            </td>
         </tr>
     @endforeach
     </tbody>

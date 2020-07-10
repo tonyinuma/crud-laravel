@@ -89,8 +89,11 @@ class ArticulosController extends Controller
      * @param  \App\Articulos  $articulos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Articulos $articulos)
+    public function destroy($id)
     {
         //
+        Articulos::destroy($id);
+
+        return redirect('articulos');
     }
 }
