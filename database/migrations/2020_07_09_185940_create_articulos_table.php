@@ -20,8 +20,7 @@ class CreateArticulosTable extends Migration
             $table->integer('cantidad');
             $table->double('precio_maroyista', 15, 8);
             $table->double('precio_minorista', 15, 8);
-            $table->boolean('stock_disponible');
-            $table->boolean('foto');
+            $table->string('foto');
             $table->timestamps();
         });
     }
